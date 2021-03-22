@@ -1,6 +1,6 @@
-# vite2+vue3+typescript+ssr
+# Vite2+Vue3+TS+SSR
 
-vite2 vue3 ssr typescript scss vuex vue-router and meta-manage
+vite2 vue3 SSR typescript scss vuex vue-router eslint and meta-manage
 
 # usage
 
@@ -17,4 +17,10 @@ http://localhost:8080
 
 ```
 yarn build
+```
+
+- preview
+
+```
+yarn preview
 ```
