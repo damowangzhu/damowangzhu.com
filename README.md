@@ -1,6 +1,6 @@
 # Vite2+Vue3+TS+SSR
 
-vite2 vue3 SSR typescript scss vuex vue-router eslint and meta-manage
+vite2 vue3 SSR typescript vuex vue-router asyncData scss eslint and meta-manage
 
 # usage
 
