@@ -4,7 +4,6 @@
     <router-link :to="{ name: 'about' }"> About |</router-link>
     <router-link :to="{ name: 'test' }"> Test </router-link>
 
-    <div class="container"></div>
     <router-view v-slot="{ Component }">
       <Suspense>
         <component :is="Component" />
@@ -14,7 +13,7 @@
 </template>
 
 <script lang="ts">
-// import '@/scss/index.scss';
+// import '@/scss/common.scss';
 export default {};
 </script>
 <style scoped>

@@ -4,15 +4,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
+import { useStore } from 'vuex';
+
 export default defineComponent({
+  setup() {
+    const store = useStore();
+    const mess = computed(() => store.state.message);
+
+    return { mess };
+  },
   asyncData({ store }) {
     return store.dispatch('fetchMessage');
-  },
-  computed: {
-    mess() {
-      return this.$store.state.message;
-    }
   }
 });
 </script>

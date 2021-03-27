@@ -1,7 +1,6 @@
 import { defineComponent } from 'vue';
-import './foo.css';
+// import './foo.css';
 
-// named exports w/ variable declaration: ok
 export const Foo = defineComponent({
   name: 'Foo',
   setup() {

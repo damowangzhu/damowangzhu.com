@@ -5,16 +5,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, defineAsyncComponent } from 'vue';
+import { defineComponent, defineAsyncComponent, computed } from 'vue';
+import { useStore } from 'vuex';
 
 export default defineComponent({
   components: {
-    Foo: defineAsyncComponent(() => import('@/components/Foo.tsx').then((mod) => mod.Foo))
+    Foo: defineAsyncComponent(() => import('@/components/foo/Foo').then((mod) => mod.Foo))
   },
-  computed: {
-    mess() {
-      return this.$store.state.message;
-    }
+  setup() {
+    const store = useStore();
+    const mess = computed(() => store.state.message);
+
+    return { mess };
   }
 });
 </script>

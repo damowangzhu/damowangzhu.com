@@ -1,5 +1,5 @@
 import App from './app.vue';
-import '@/scss/index.scss';
+import '@/scss/common.scss';
 import createStore from './store/';
 import { createSSRApp } from 'vue';
 import { isPromise } from './utils';
@@ -21,7 +21,7 @@ router.beforeResolve((to, from, next) => {
   if (from && !from.name) {
     return next();
   } else {
-    to.meta.title && (window.document.title = to.meta.title as any);
+    window.document.title = (to.meta.title || '首页') as any;
   }
   const activated = matched.filter((c, i) => {
     return diffed || (diffed = prevMatched[i] !== c);

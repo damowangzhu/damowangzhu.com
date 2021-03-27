@@ -61,7 +61,7 @@ async function createServer(root = process.cwd(), isProd = isProduction) {
 
 
       try {
-        html = html.replace('_Title_', state.route.meta.title)
+        state && state.route && (html = html.replace('_Title_', state.route.meta.title|| '首页')) 
       } catch (error) {
         console.log(error);
       }
