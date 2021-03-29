@@ -1,9 +1,12 @@
 import { createStore as _createStore } from 'vuex';
 
+// import { getBookmarks } from '@/api/index';
+
 export default function createStore() {
   return _createStore({
     state: {
-      message: 'Hello vite vue'
+      message: 'Hello vite vue',
+      searchResults: []
     },
     mutations: {},
     actions: {

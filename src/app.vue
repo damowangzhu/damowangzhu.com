@@ -1,34 +1,27 @@
 <template>
-  <div class="logo">
-    <router-link :to="{ name: 'home' }"> Home | </router-link>
-    <router-link :to="{ name: 'about' }"> About |</router-link>
-    <router-link :to="{ name: 'test' }"> Test </router-link>
-
+  <div class="min-height">
     <router-view v-slot="{ Component }">
       <Suspense>
         <component :is="Component" />
       </Suspense>
     </router-view>
   </div>
+  <Footer></Footer>
+  <ScrollTop></ScrollTop>
 </template>
 
 <script lang="ts">
-// import '@/scss/common.scss';
-export default {};
+import Footer from '@/components/Footer.vue';
+import ScrollTop from '@/components/ScrollTop.vue';
+export default {
+  components: {
+    Footer,
+    ScrollTop
+  }
+};
 </script>
 <style scoped>
-.logo {
-  text-align: center;
-}
-.container {
-  padding: 10px 0;
-}
-nav {
-  width: 500px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 20px 0;
-  border-radius: 4px;
+.min-height {
+  min-height: calc(100vh - 44px);
 }
 </style>

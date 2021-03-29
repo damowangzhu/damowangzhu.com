@@ -187,3 +187,48 @@ textarea {
   left: 50%;
   transform: translate(-50%);
 }
+
+.flex {
+  display: flex;
+}
+
+@keyframes fade {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(50%);
+    opacity: 1;
+  }
+}
+
+#toast-container {
+  position: relative;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  text-align: center;
+  .toast-item {
+    width: 400px;
+    padding: 6px;
+    margin-bottom: 20px;
+    animation: fade 0.5s forwards;
+  }
+  .success {
+    color: #67c23a;
+    background-color: #f0f9eb;
+    border-color: #e1f3d8;
+  }
+  .warn {
+    color: #f56c6c;
+    background-color: #fdf6ec;
+    border-color: #faecd8;
+  }
+}

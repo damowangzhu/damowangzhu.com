@@ -10,6 +10,9 @@ import { useStore } from 'vuex';
 export default defineComponent({
   setup() {
     const store = useStore();
+    console.log(store.state.message);
+    console.log(store.state.bookmarks);
+
     const mess = computed(() => store.state.message);
 
     return { mess };

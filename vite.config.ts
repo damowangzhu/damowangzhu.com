@@ -4,7 +4,7 @@ const vueJsxPlugin = require('@vitejs/plugin-vue-jsx');
 const vuePlugin = require('@vitejs/plugin-vue');
 
 export default {
-  port: 8080,
+  port: 3000,
   plugins: [vuePlugin(), vueJsxPlugin()],
   resolve: {
     alias: {

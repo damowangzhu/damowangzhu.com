@@ -15,9 +15,9 @@ export default function () {
         }
       },
       {
-        path: '/test',
-        name: 'test',
-        component: () => import('@/views/Test.vue')
+        path: '/search',
+        name: 'search',
+        component: () => import('@/views/Search.vue')
       },
       {
         path: '/about',
@@ -25,6 +25,14 @@ export default function () {
         component: () => import('@/views/About.vue'),
         meta: {
           title: 'about title'
+        }
+      },
+      {
+        path: '/:catchAll(.*)*',
+        name: '404',
+        component: () => import('@/components/NotFound.vue'),
+        meta: {
+          title: '404 Not Found'
         }
       }
     ]

@@ -7,7 +7,8 @@ const axios = require('axios');
 axios.defaults.adapter = require('axios/lib/adapters/http');
 
 const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD;
-const isProduction = process.env.NODE_ENV === 'production';
+// const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = true;
 async function createServer(root = process.cwd(), isProd = isProduction) {
   const resolve = (p) => path.resolve(__dirname, p);
   const indexProd = isProd ? fs.readFileSync(resolve('dist/client/index.html'), 'utf-8') : '';
@@ -79,8 +80,8 @@ async function createServer(root = process.cwd(), isProd = isProduction) {
 
 if (!isTest) {
   createServer().then(({ app }) =>
-    app.listen(8080, () => {
-      console.log('http://localhost:8080');
+    app.listen(3000, () => {
+      console.log('http://localhost:3000');
     })
   );
 }
